@@ -1,0 +1,14 @@
+loaded:
+# http://www.gutenberg.org/ebooks/29765
+# https://github.com/adambom/dictionary
+
+irrelevant or odd, use later?:
+https://www.npmjs.com/package/categorized-words
+https://myvocabulary.com/word-list/
+
+cats:
+http://www.manythings.org/vocabulary/lists/c/
+http://www.enchantedlearning.com/wordlist/
+
+ready as files:
+https://github.com/imsky/wordlists
