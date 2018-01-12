@@ -18,7 +18,8 @@ public class Board : MonoBehaviour {
                 tiles.Add(g);
             }
         }
-	}
+        gameObject.transform.position = new Vector3(-gridWidth / 2 + 0.5f, -gridHeight / 2 + 0.5f, 0);
+    }
 	
 	// Update is called once per frame
 	void Update () {
