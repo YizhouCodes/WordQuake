@@ -7,7 +7,9 @@ public class Tile : MonoBehaviour {
     string letters = "abcdefghijklmnopqrstuvwxyz";
     string letter = "";
     public GameObject Letter;
+    public GameObject tileObject;
     public List<Tile> neighbors = new List<Tile>();
+    public bool isSelected = false;
 
 	// Use this for initialization
 	void Start () {
@@ -19,12 +21,24 @@ public class Tile : MonoBehaviour {
 		
 	}
 
+    public void ToggleSelected()
+    {
+        isSelected = !isSelected;
+        Material m;
+        if (isSelected)
+        {
+            m = Resources.Load("Materials/Green", typeof(Material)) as Material;
+        }
+        else {
+            m = Resources.Load("Materials/Grey", typeof(Material)) as Material;
+        }
+        tileObject.GetComponent<MeshRenderer>().material = m;
+    }
+
     public void CreateTile()
     {
         letter = letters[Random.Range(0, letters.Length)].ToString();
-        Debug.Log(letter);
         Sprite sprite = Resources.Load("Letters/" + letter, typeof(Sprite)) as Sprite;
-        Debug.Log(sprite);
         Letter.GetComponent<SpriteRenderer>().sprite = sprite;
     }
 
@@ -39,6 +53,6 @@ public class Tile : MonoBehaviour {
     }
 
     void OnMouseDown() {
-        print("click");
+        ToggleSelected();
     }
 }
